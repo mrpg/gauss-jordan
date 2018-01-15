@@ -2,7 +2,7 @@ gauss-jordan
 ============
 
 This is a naive implementation of the Gauss/Jordan algorithm to invert matrices.
-It is reasonably fast and can invert a 2000×2000 matrix in 8.5 seconds. However,
+It is reasonably fast and can invert a 2000×2000 matrix in 8.2 seconds. However,
 there are faster programs out there. This program was designed to have a very
 low memory footprint.
 

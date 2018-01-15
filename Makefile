@@ -1,5 +1,5 @@
-CC = gcc
-CFLAGS = -Wall -march=native -O3 -s -std=c99
+CC = clang
+CFLAGS = -Wall -march=native -O3 -std=c99
 
 all: matrix
 

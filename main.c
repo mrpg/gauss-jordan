@@ -42,19 +42,26 @@ int main(int argc, char** argv) {
 			}
 		}
 		
-		matrix_det m2 = matrix_solve(m, dim, false);
-		
-		if (m2.det != 0) {
-			puts("Matrix is " COLOR(GREEN, "regular") ". Inverse:");
+
+                        struct timeval TIME;
+                        gettimeofday(&TIME, NULL);
+                        long b = (long)TIME.tv_sec*1000 + (long)TIME.tv_usec/1000;
+                matrix_det m2 = matrix_solve(m, dim, false);
+                        gettimeofday(&TIME, NULL);
+                        long c = (long)TIME.tv_sec*1000 + (long)TIME.tv_usec/1000;
+
+                if (m2.det != 0) {
+                        puts("Matrix is " COLOR(GREEN, "regular") ". Inverse:");
 			matrix_fprint(stdout, m2.m, dim, dim);
-		}
-		else {
-			puts("Matrix is " COLOR(RED, "singular") ". Final tableau:");
+                }
+                else {
+                        puts("Matrix is " COLOR(RED, "singular") ". Final tableau:");
 			matrix_fprint(stdout, m2.m, dim, 2*dim);
-		}
-		
-		fprintf(stderr, "Determinant: " COLOR(GREEN, "%+.6f\n"), m2.det);
-		
+                }
+
+                fprintf(stderr, "Determinant: " COLOR(GREEN, "%+.6f\n"), m2.det);
+                fprintf(stderr, "t = " COLOR(RED, "%+.3f sec\n"), (double)(c-b)/1000);
+
 		free(m);
 		free(m2.m);
 	}
