@@ -1,12 +1,12 @@
 /*
  * colors.h
- * 
+ *
  * This file is hereby placed in the PUBLIC DOMAIN. Note that the
  * other files have been released under the GNU General Public License
  * version 2 or any later version.
- * 
+ *
  * There is NO WARRANTY.
- * 
+ *
  */
 
 #ifndef COLORS_H
