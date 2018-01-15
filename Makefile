@@ -1,7 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -O3 -g -std=c99
-INSTALL_PROGRAM = install
-BINDIR = /usr/bin
+CFLAGS = -Wall -march=native -O3 -s -std=c99
 
 all: matrix
 
